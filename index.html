@@ -548,19 +548,22 @@
         }
       }
 
-      // NO BUTTON MOVE
-      noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * 300 - 150;
+      function moveNoButton() {
+        const x = Math.random() * 200 - 100;
         const y = Math.random() * 200 - 100;
-        noBtn.style.transform = `translate(${x}px,${y}px)`;
-      });
 
-      if (window.innerWidth <= 768) {
-  noBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    moveNoButton();
-  });
-}
+        noBtn.style.position = "relative";
+        noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      }
+
+      // desktop hover (keep)
+      noBtn.addEventListener("mouseover", moveNoButton);
+
+      // mobile touch/click
+      noBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        moveNoButton();
+      });
     </script>
   </body>
 </html>

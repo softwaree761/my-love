@@ -231,6 +231,22 @@
 
       /* Small phones (iPhone SE, etc.) */
       @media (max-width: 480px) {
+        .slide {
+          left: 0px;
+          opacity: 0;
+          transform: scale(1.05);
+          transition:
+            opacity 1.5s ease,
+            transform 1.5s ease;
+          position: absolute;
+          width: 67%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 20px;
+          left: 50px;
+        }
+
         h1 {
           font-size: 32px;
         }
@@ -268,6 +284,22 @@
 
       /* Medium phones (iPhone 12/13/14, Galaxy S series) */
       @media (max-width: 768px) {
+        .slide {
+          left: 0px;
+          opacity: 0;
+          transform: scale(1.05);
+          transition:
+            opacity 1.5s ease,
+            transform 1.5s ease;
+          position: absolute;
+          width: 67%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 20px;
+          left: 50px;
+        }
+
         h1 {
           font-size: 38px;
         }
@@ -292,6 +324,22 @@
 
       /* Large phones / small tablets */
       @media (max-width: 1024px) {
+        .slide {
+          left: 0px;
+          opacity: 0;
+          transform: scale(1.05);
+          transition:
+            opacity 1.5s ease,
+            transform 1.5s ease;
+          position: absolute;
+          width: 67%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 20px;
+          left: 50px;
+        }
+
         .container {
           width: 85%;
         }
@@ -506,6 +554,13 @@
         const y = Math.random() * 200 - 100;
         noBtn.style.transform = `translate(${x}px,${y}px)`;
       });
+
+      if (window.innerWidth <= 768) {
+  noBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    moveNoButton();
+  });
+}
     </script>
   </body>
 </html>
